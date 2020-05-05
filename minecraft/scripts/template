@@ -1,0 +1,25 @@
+docker run -d \
+      --name XXXX \
+      -p XXXX \
+      -e SERVER_PORT=XXXX \
+      -e SERVER_IP=XXXX
+      -v XXXX:/data \
+      -e EULA=XXXX \
+      -e SERVER_NAME=XXXX \
+      -e LEVEL=XXXX \
+      -e DIFFICULTY=XXXX \
+      -e ENABLE_RCON=XXXX \
+      -e RCON_PORT=XXXX \
+      -e RCON_PASSWORD=XXXX \
+      -e MAX_PLAYERS=XXXX \
+      -e FORCE_GAMEMODE=XXXX \
+      -e GENERATE_STRUCTURES=XXXX \
+      -e SPAWN_ANIMALS=XXXX \
+      -e SPAWN_MONSTERS=XXXX \
+      -e SPAWN_NPCS=XXXX \
+      -e SNOOPER_ENABLED=XXXX \
+      -e HARDCORE=XXXX \
+      -e MODE=XXXX \
+      -e LEVEL_TYPE=XXXX \
+      -e MEMORY=XXXX \
+      itzg/minecraft-server

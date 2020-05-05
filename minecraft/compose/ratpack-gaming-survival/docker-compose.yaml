@@ -1,0 +1,29 @@
+version: '3'
+services:
+  mc-ratpack-survival:
+    ports:
+      - 25565:25565
+    volumes:
+      - /home/docker/docker-volumes/minecraft-survival:/data
+    environment:
+      MODE: survival
+      DIFFICULTY: normal
+      EULA: "true"
+      MAX_MEMORY: 8G
+      MAX_BUILD_HEIGHT: 256
+      VIEW_DISTANCE: 10
+      LEVEL_TYPE: default
+      FORCE_GAMEMODE: "true"
+      MAX_PLAYERS: 20
+      CONSOLE: "false"
+      ENABLE_RCON: "true"
+      RCON_PASSWORD: admin
+      RCON_PORT: 4326
+      MOTD: Ratpack-Gaming Survival | Vanilla
+      LEVEL: survival
+    image: itzg/minecraft-server
+    container_name: mc-ratpack-survival
+    restart: always
+
+
+    

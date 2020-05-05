@@ -1,0 +1,31 @@
+version: '3'
+services:
+  mc-ratpack-creative:
+    ports:
+      - 25566:25565
+    volumes:
+      - /home/docker/docker-volumes/minecraft-creative:/data
+    environment:
+      MODE: creative
+      EULA: "true"
+      MAX_MEMORY: 4G
+      MAX_BUILD_HEIGHT: 256
+      VIEW_DISTANCE: 10
+      LEVEL_TYPE: flat
+      FORCE_GAMEMODE: "true"
+      MAX_PLAYERS: 20
+      CONSOLE: "false"
+      ENABLE_RCON: "true"
+      RCON_PASSWORD: admin
+      RCON_PORT: 4326
+      MOTD: Ratpack-Gaming Creative | Vanilla
+      LEVEL: creative
+      SPAWN_MONSTERS: "false"
+      SPAWN_NPC: "false"
+      SPAWN_ANIMALS: "false"
+      ALLOW_NETHER: "false"
+      GENERATE_STRUCTURES: "false"
+    image: itzg/minecraft-server
+    container_name: mc-ratpack-creative
+    restart: always
+

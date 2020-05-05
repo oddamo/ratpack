@@ -1,0 +1,30 @@
+version: '3'
+services:
+  MC-:
+    ports:
+      - :25565
+    volumes:
+      - XXXX:/data
+    environment:
+      MODE: 
+      DIFFICULTY: 
+      EULA: ""
+      MAX_MEMORY: 
+      MAX_BUILD_HEIGHT: 
+      VIEW_DISTANCE: 
+      LEVEL_TYPE: 
+      FORCE_GAMEMODE: ""
+      MAX_PLAYERS: 
+      ENABLE_RCON: ""
+      RCON_PASSWORD: 
+      RCON_PORT: 
+      MOTD: 
+      LEVEL: 
+      SPAWN_MONSTERS: ""
+      SPAWN_NPC: ""
+      SPAWN_ANIMALS: ""
+      ALLOW_NETHER: ""
+      GENERATE_STRUCTURES: ""
+    image: itzg/minecraft-server
+    container_name: 
+    restart: always

@@ -1,0 +1,19 @@
+version: '3'
+services:
+  servicenavn:
+    ports:
+      - :
+    volumes:
+      - :
+    environment:
+      
+    image: 
+    container_name: 
+    restart: always
+
+
+
+
+
+
+

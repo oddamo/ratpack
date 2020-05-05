@@ -1,0 +1,13 @@
+version: '3'
+services:
+  openttd-ratpack:
+    ports:
+      - 3979:3979/tcp
+      - 3979:3979/udp
+    volumes:
+      - /home/odd/docker-volumes/.openttd:/home/openttd/.openttd
+    environment:
+      setting: server_name Ratpack-Gaming openTTD 
+    image: bateau/openttd
+    container_name: openttd-ratpack
+    restart: always

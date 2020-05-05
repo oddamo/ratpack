@@ -1,0 +1,142 @@
+Dette dokumentet er levert av Odd Andre M. Oddsen til Ratpack-Gaming sin hoved administrator.
+
+For å sette opp en ny minecraft server så må en rekke parameter bli redigert. Du kan kopiere template.yaml over i en ny mappe og gjøre om navnet til docker-compose.yaml og redigere innholdet fra der.
+For å starte en server, restarte den eller stoppe den helt så må en terminal jobbe ut fra samme mappe som docker-compose filen befinner seg. Følgende kommandoer kan da brukes.
+
+docker 
+
+Under finner du en beskrivelse av parameterene i yaml filen som må redigeres før bruk.
+Husk at du ikke må bruke den orginale template.yaml filen, men lag en kopi av den rediger deretter.
+
+NB, alle parameter som er true eller false må være satt i hermetegn grunnet programmeringsspråket yaml bruker.
+¤¤¤¤ ALT SOM ER MERKET MED XXXX ER PARAMETER SOM MÅ ENDRES! ¤¤¤¤
+
+------------------------------------------------------------------------------------------------------------------------------------
+
+I docker compose så blir minecraft serveren satt opp som en service. Sett et unikt navn, gjerne det samme som verdenen som skal bli laget eller ligndende.
+
+  mc-XXXX:
+    
+    ports:
+      
+Hvilken port er ønsket at serveren skal bruke? Dette må være unikt for denne serveren. Se Portnummer dokument
+
+      - XXXX:25565
+
+    volumes:
+
+For at minecraft verden skal kunne bli lagret og fortsatt være der om containeren blir restartet så er det nødt til å bli satt en plass lokalt på serveren hvor slik data skal bli lagret. 
+Når containeren restarter så vil den hente lagrede data fra denne mappen som server konfigurasjoner, og verdener. Det er i denne mappen det eventuelt vil være mulig og gjøre endringer på en allerede laget verden i server.configuration filen.
+
+      - XXXX:/data
+
+Endringer og konfigurasjoner innenfor containeren som allerede ved første oppstart er bestemt kan konfigureres innenfor environments.
+
+    environment:
+
+Endringer og konfigurasjoner innenfor containeren som allerede ved første oppstart er bestemt kan konfigureres her. Servernavn for å kunne skille serveren fra hverandre
+
+      SERVER_NAME: XXXX
+
+Hvilken type spillmodus er ønsket for denne serveren?
+Muligheter: creative - survival - adventure
+      
+      MODE: XXXX
+
+Hvilken vanskelighetsgrad er ønsket?
+Muligheter: peaceful - easy - normal - hard
+      
+      DIFFICULTY: XXXX
+
+Har du lest og godkjent EULA for bruk av Mojang sin programvare?
+Muligheter: true
+      
+      EULA: "XXXX"
+
+Hva er ønsket max minnebruk for denne minecraft serveren?
+Det er ønskelig med over 8GB om det skal være over 10 spillere på serveren.
+      
+      MAX_MEMORY: XXXXG
+
+Hva er max høyde spillere skal kunne bygge i?
+256 er standard
+      
+      MAX_BUILD_HEIGHT: XXXX
+
+Hva er max lengde spillere skal kunne se på serveren?
+NB, jo høyere denne verdien er jo mer ressurser må serveren bruke av CPU for å rendere verden.
+10 er standard
+      
+      VIEW_DISTANCE: XXXX
+
+Hvilken type verden er ønskelig for denne serveren?
+Muligheter: default - flat - largebiomes
+      
+      LEVEL_TYPE: XXXX
+
+Skal alle spillere som kommer inn på serveren bli tvunget inn i samme spillmodus?
+Muligheter: true - false
+      
+      FORCE_GAMEMODE: "XXXX"
+
+Hvor mange spillere skal max kunne spille på serveren samtidig?
+Jo høyere antall jo mer ressurser kan måtte brukes på serveren.
+Om serveren begynner å bli ustabil eller responstiden blir veldig lav om mange er inne samtidig kan dette justeres her. 20 stk er et greit utgangspunkt
+      
+      MAX_PLAYERS: XXXX
+
+RCON er en protokoll som gjør at det kan sendes kommandoer direkte til minecraft serveren med tredjeparts programvare
+for lettere administrasjon. Om denne funksjonen er ønskelig aktiveres denne her.
+Muligheter: true - false
+      
+      ENABLE_RCON: "XXXX"
+
+RCON bruker et passord for at et administratorpanel skal kunne kobles til.
+NB, denne blir kun lagret i klar tekst i filene til minecraft serveren og burde derfor være unik og ikke det samme som selve verten av containeren.
+      
+      RCON_PASSWORD: XXXX
+
+Hvilken port er det ønskelig at tredjeparts programvare skal kunne kontakte RCON?
+      
+      RCON_PORT: XXXX
+
+Det er mulig og sette en unik beskjed på serveren som alle spillere kan se før de logger seg inn på serveren.
+      
+      MOTD: XXXX
+
+Hvilket navn skal denne verden ha? Det er viktig med noe unikt da dette blir lagret i filsystemet og gjør det lettere med backup
+      
+      LEVEL: XXXX
+
+Skal det det være monster på serveren?
+Muligheter: true - false
+      
+      SPAWN_MONSTERS: "XXXX"
+
+Skal det være landsbyboere som serveren styrer på serveren?
+Muligheter: true - false
+      
+      SPAWN_NPC: "XXXX"
+
+Skal det være dyr rundt forbi på serveren?
+Mulighet: true - false
+      
+      SPAWN_ANIMALS: "XXXX"
+
+Skal NETHER verden være tilgjengelig for spillere? I creative verdener så vil dette mest sannsynlig ikke være nødvendig og være ressurssparende for serveren
+Muligheter: true - false
+      
+      ALLOW_NETHER: "XXXX"
+
+Skal hele landsbyer kunne tilfeldigvis bli funnet rundt forbi i verdenen?
+Muligheter: true - false
+      
+      GENERATE_STRUCTURES: "XXXX"
+  
+    image: itzg/minecraft-server
+
+For å lettere kunne administrere docker containers når flere servere er oppe så er det lurt å sette et unikt navn på containeren for lettere administrasjon.
+
+    container_name:XXXX
+
+    restart: always
