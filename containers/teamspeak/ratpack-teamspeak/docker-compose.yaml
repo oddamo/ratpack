@@ -6,7 +6,7 @@ services:
       - 10011:10011
       - 30033:30033
     volumes:
-      - /home/odd/docker-volumes/teamspeak:/var/ts3server/
+      - /home/docker/docker-volumes/teamspeak:/var/ts3server/
     environment:
       TS3SERVER_DB_PLUGIN: ts3db_mariadb
       TS3SERVER_DB_SQLCREATEPATH: create_mariadb

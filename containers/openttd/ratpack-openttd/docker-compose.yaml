@@ -5,7 +5,7 @@ services:
       - 3979:3979/tcp
       - 3979:3979/udp
     volumes:
-      - /home/odd/docker-volumes/.openttd:/home/openttd/.openttd
+      - /home/docker/docker-volumes/.openttd:/home/openttd/.openttd
     environment:
       setting: server_name Ratpack-Gaming openTTD 
     image: bateau/openttd

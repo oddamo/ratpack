@@ -4,7 +4,7 @@ services:
     ports:
       - 7777:7777
     volumes:
-      - /home/odd/docker-volumes/terraria:/world
+      - /home/docker/docker-volumes/terraria:/world
     image: ryshe/terraria:latest
     container_name: terraria-ratpack
     restart: always
