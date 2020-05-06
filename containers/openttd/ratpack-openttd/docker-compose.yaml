@@ -5,9 +5,10 @@ services:
       - 3979:3979/tcp
       - 3979:3979/udp
     volumes:
-      - /home/docker/docker-volumes/openttd:/home/openttd/.openttd
+      - /home/docker/docker-volumes/.openttd:/home/openttd/.openttd
     environment:
-      loadgame: "true"
+      PUID: 1001
+      PGID: 1001     
       savename: ratpack.sav
     image: bateau/openttd
     container_name: openttd-ratpack
