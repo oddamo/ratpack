@@ -5,9 +5,6 @@ services:
       - 7777:7777
     volumes:
       - /home/docker/docker-volumes/terraria:/world
-    environment:
-      autocreate: #
-      
     image: ryshe/terraria:latest
     container_name: terraria-ratpack
     restart: always
