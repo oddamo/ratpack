@@ -8,3 +8,4 @@ services:
     image: ryshe/terraria:latest
     container_name: terraria-ratpack
     restart: always
+
