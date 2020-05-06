@@ -1,4 +1,4 @@
-version: '3'
+cat version: '3'
 services:
   mc-ratpack-creative:
     ports:

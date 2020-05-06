@@ -5,7 +5,7 @@ services:
       - 7777:7777
     volumes:
       - /home/docker/docker-volumes/terraria:/world
-    environments:
+    environment:
       autocreate: #
       
     image: ryshe/terraria:latest
