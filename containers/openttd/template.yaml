@@ -1,0 +1,12 @@
+version: '3'
+services:
+  openttd-XXXX:
+    ports:
+      - XXXX:3979/tcp
+      - XXXX:3979/udp
+    volumes: 
+      - /home/docker/docker-volumes/XXXX/.openttd/openttd.cfg:/config/openttd.cfg:ro
+    image: redditopenttd/openttd
+    container_name: 
+    restart: always
+

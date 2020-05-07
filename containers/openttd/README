@@ -1,0 +1,44 @@
+Dette dokumentet er levert av Odd Andre M. Oddsen til Ratpack-Gaming sin hoved administrator.
+
+For å sette opp en ny openTTD server så må en rekke parameter bli redigert. Du kan kopiere template.yaml som befinner seg i denne mappen over i en ny mappe og gjøre om navnet til docker-compose.yaml og redigere innholdet fra der.
+
+For å starte en server/container, restarte den eller stoppe den helt så må det skrives kommandoer i kommandolinjen. Se README i /ratpack for å se full kommandloliste. 
+
+Under finner du en beskrivelse av parameterene i yaml filen som må redigeres før bruk.
+Husk at du ikke må bruke den orginale template.yaml filen, men lag en kopi av den orginale for bruk. 
+
+NB, alle parameter som er true eller false må være satt i hermetegn grunnet programmeringsspråket yaml bruker.
+¤¤¤¤ ALT SOM ER MERKET MED XXXX ER PARAMETER SOM MÅ ENDRES! ¤¤¤¤
+
+---------------------------------------------------------------------------------------------------------------------------------
+
+version: '3'
+services:
+
+I docker compose så blir openTTD serveren satt opp som en service. Sett et unikt navn som viser til innholdet i tjenesten.
+
+  openttd-XXXX:
+
+Hvilken port er ønsket at serveren skal bruke? Dette må være unikt for denne serveren. Se PORT dokument under /ratpack
+TCP og UDP kan fint være den samme porten
+
+    ports:
+      - XXXX:3979/tcp
+      - XXXX:3979/udp
+
+Når containeren blir startet så vil konfigurasjonsfilen til serveren som servernavn, hvor mange spillere og lignende bli hentet fra denne lokasjonen på utsiden av containeren. Det er derfor viktig at det blir laget en openttd.cfg fil i samme lokasjon som det blir konfigurert her. Et eksempel kan kopieres og redigere fra openttd.cfg /ratpack/containers/openttd/openttd.cfg. Husk å la orginalen bli værende.
+
+    volumes: 
+      - /home/docker/docker-volumes/XXXX/.openttd/openttd.cfg:/config/openttd.cfg:ro
+
+    image: redditopenttd/openttd
+
+For å lettere kunne administrere docker containers når flere servere er oppe så er det lurt å sette et unikt navn på containeren for lettere administrasjon.
+
+    container_name: XXXX
+
+    restart: always
+
+----------------------------------------------------------------------------------------------------------------------------------
+
+For å endre servernavn, RCON konfigurasjoner og annet så må dette bli gjort i openttd.cfg filen og blir ikke gjort direkte i docker-compose.yaml
