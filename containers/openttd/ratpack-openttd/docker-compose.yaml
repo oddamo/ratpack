@@ -5,7 +5,7 @@ services:
       - 3979:3979/tcp
       - 3979:3979/udp
     environment:
-      copy_config: /home/docker/ratpack/containers/openttd/ratpack-openttd/openttd.cfg
+      COPY_CONFIG: /home/docker/ratpack/containers/openttd/ratpack-openttd/openttd.cfg
     image: redditopenttd/openttd
     container_name: openttd-ratpack
     restart: always
