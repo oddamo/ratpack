@@ -4,8 +4,9 @@ services:
     ports:
       - 3979:3979/tcp
       - 3979:3979/udp
-    environment:
-      "COPY_CONFIG=/home/docker/ratpack/containers/openttd/ratpack-openttd/openttd.cfg"
+    volumes: 
+      - /home/docker/docker-volumes/.openttd/openttd.cfg:/config/openttd.cfg:ro
     image: redditopenttd/openttd
     container_name: openttd-ratpack
     restart: always
+
