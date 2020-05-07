@@ -5,7 +5,7 @@ services:
       - 3979:3979/tcp
       - 3979:3979/udp
     volumes:
-      - /home/docker/docker-volumes/.openttd:/config:rw
+      - /home/docker/docker-volumes/.openttd:/
     environment:
       loadgame: "exit"
     image: redditopenttd/openttd
