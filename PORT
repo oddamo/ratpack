@@ -20,4 +20,10 @@ Neste ledige port: 3980:3979
 
 ¤¤¤¤ Teamspeak ¤¤¤¤
 
-Ratpack-Gaming Teamspeak - 
+Ratpack-Gaming Teamspeak - 9987:9987/udp
+      					 - 10011:10011
+                         - 30033:30033
+
+Neste ledige porter: -9988:9987/udp
+                     - 10012:10011
+                     - 30034:30033

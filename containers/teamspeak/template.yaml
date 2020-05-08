@@ -7,21 +7,7 @@ services:
     volumes:
       - XXXX:/var/ts3server/
     environment:
-      TS3SERVER_DB_PLUGIN: ts3db_mariadb
-      TS3SERVER_DB_SQLCREATEPATH: create_mariadb
-      TS3SERVER_DB_HOST: db
-      TS3SERVER_DB_USER: XXXX
-      TS3SERVER_DB_PASSWORD: XXXX
-      TS3SERVER_DB_NAME: XXXX
-      TS3SERVER_DB_WAITUNTILREADY: 30
       TS3SERVER_LICENSE: accept
     image: teampeak
     container_name: XXXX
-    restart: always
-  db:
-    environment:
-      MYSQL_ROOT_PASSWORD: XXXX
-      MYSQL_DATABASE: XXXX
-    container_name: XXXX
-    image: mariadb
     restart: always
