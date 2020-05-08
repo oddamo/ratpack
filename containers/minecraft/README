@@ -137,6 +137,6 @@ Muligheter: true - false
 
 For å lettere kunne administrere docker containers når flere servere er oppe så er det lurt å sette et unikt navn på containeren for lettere administrasjon.
 
-    container_name:XXXX
+    container_name: ratpack-XXXX
 
     restart: always

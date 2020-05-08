@@ -1,13 +1,13 @@
 version: '3'
 services:
-  terraria-ratpack:
+  ratpack-terraria:
     ports:
       - 7777:7777
     volumes:
-      - /home/docker/docker-volumes/terraria-ratpack:/world
+      - /home/docker/docker-volumes/ratpack-terraria:/world
     command: '-world /world/ratpack.wld'
     image: ryshe/terraria:latest
-    container_name: terraria-ratpack
+    container_name: ratpack-terraria
     restart: always
 
-#sudo docker run -it -p 7777:7777 -v /home/docker/docker-volumes/terraria-ratpack:/world --name="ratpack-terraria" ryshe/terraria:latest
+#sudo docker run -it -p 7777:7777 -v /home/docker/docker-volumes/ratpack-terraria:/world --name="ratpack-terraria" ryshe/terraria:latest

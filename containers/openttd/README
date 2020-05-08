@@ -17,7 +17,7 @@ services:
 
 I docker compose så blir openTTD serveren satt opp som en service. Sett et unikt navn som viser til innholdet i tjenesten.
 
-  openttd-XXXX:
+  ratpack-XXXX:
 
 Hvilken port er ønsket at serveren skal bruke? Dette må være unikt for denne serveren. Se PORT dokument under /ratpack
 TCP og UDP kan fint være den samme porten
@@ -35,7 +35,7 @@ Når containeren blir startet så vil konfigurasjonsfilen til serveren som serve
 
 For å lettere kunne administrere docker containers når flere servere er oppe så er det lurt å sette et unikt navn på containeren for lettere administrasjon.
 
-    container_name: XXXX
+    container_name: ratpack-XXXX
 
     restart: always
 

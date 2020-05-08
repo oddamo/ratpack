@@ -1,10 +1,10 @@
 version: '3'
 services:
-  mc-ratpack-survival:
+  ratpack-mcsurvival:
     ports:
       - 25565:25565
     volumes:
-      - /home/docker/docker-volumes/minecraft-survival:/data
+      - /home/docker/docker-volumes/ratpack-mcsurvival:/data
     environment:
       MODE: survival
       DIFFICULTY: normal
@@ -22,7 +22,7 @@ services:
       MOTD: Ratpack-Gaming Survival | Vanilla
       LEVEL: survival
     image: itzg/minecraft-server
-    container_name: mc-ratpack-survival
+    container_name: ratpack-mcsurvival
     restart: always
 
 

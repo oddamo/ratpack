@@ -1,28 +1,28 @@
 version: '3'
 services:
-  teamspeak:
+  ratpack-teamspeak:
     ports:
       - 9987:9987/udp
       - 10011:10011
       - 30033:30033
     volumes:
-      - /home/docker/docker-volumes/teamspeak:/var/ts3server/
+      - /home/docker/docker-volumes/ratpack-teamspeak:/var/ts3server/
     environment:
       TS3SERVER_DB_PLUGIN: ts3db_mariadb
       TS3SERVER_DB_SQLCREATEPATH: create_mariadb
       TS3SERVER_DB_HOST: db
-      TS3SERVER_DB_USER: odd
-      TS3SERVER_DB_PASSWORD: odda
-      TS3SERVER_DB_NAME: teamspeak
+      TS3SERVER_DB_USER: adminrat 
+      TS3SERVER_DB_PASSWORD: adminrat
+      TS3SERVER_DB_NAME: Ratpack-Gaming
       TS3SERVER_DB_WAITUNTILREADY: 30
       TS3SERVER_LICENSE: accept
     image: teamspeak
-    container_name: teamspeak-ratpack
+    container_name: ratpack-teamspeak
     restart: always
   db:
     environment:
-      MYSQL_ROOT_PASSWORD: odda
+      MYSQL_ROOT_PASSWORD: adminrat
       MYSQL_DATABASE: teamspeak
-    container_name: teamspeak-database
+    container_name: ratpack-teamspeak-database
     image: mariadb
     restart: always

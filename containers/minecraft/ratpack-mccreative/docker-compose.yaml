@@ -1,10 +1,10 @@
-cat version: '3'
+version: '3'
 services:
-  mc-ratpack-creative:
+  ratpack-mccreative:
     ports:
       - 25566:25565
     volumes:
-      - /home/docker/docker-volumes/minecraft-creative:/data
+      - /home/docker/docker-volumes/ratpack-mccreative:/data
     environment:
       MODE: creative
       EULA: "true"
@@ -26,6 +26,6 @@ services:
       ALLOW_NETHER: "false"
       GENERATE_STRUCTURES: "false"
     image: itzg/minecraft-server
-    container_name: mc-ratpack-creative
+    container_name: ratpack-mccreative
     restart: always
 
