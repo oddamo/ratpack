@@ -1,6 +1,6 @@
 version: '3'
 services:
-  teamspeak:
+  XXXX:
     ports:
       - XXXX:XXX/udp
       -
