@@ -1,0 +1,11 @@
+version: '3'
+services:
+  ratpack-XXXX:
+    ports:
+      - XXXX:7777
+    volumes:
+      - /home/docker/docker-volumes/XXXX:/world
+    command: '-world /world/XXXX.wld'
+    image: ryshe/terraria:latest
+    container_name: XXXX
+    restart: always
