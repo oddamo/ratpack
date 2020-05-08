@@ -1,6 +1,23 @@
 Portnummer i bruk for Ratpack Gaming tjenester
-Gjerne lag nye servere i samme rekkefølge for enkel administrasjon senere.
-Dette dokumentet burde holdes oppdatert til enehver tid.
+Gjerne lag nye servere i samme konsekutiv rekkefølge for enkel administrasjon senere.
+Dette dokumentet er anbefalt å holde oppdatert til enehver tid. 
 
-Ratpack-Gaming Survival - 25565
-Ratpack-Gaming Creative - 25566
+¤¤¤¤ MINECRAFT ¤¤¤¤
+
+Ratpack-Gaming Survival - 25565:25565
+Ratpack-Gaming Creative - 25566:25565
+Neste ledige port: 25567:25565
+
+¤¤¤¤ TERRARIA ¤¤¤¤
+
+Ratpack-Gaming Terraria - 7777:7777
+Neste ledige port: 7778:7777
+
+¤¤¤¤ openTTD ¤¤¤¤
+
+Ratpack-Gaming openTTD - 3979:3979
+Neste ledige port: 3980:3979
+
+¤¤¤¤ Teamspeak ¤¤¤¤
+
+Ratpack-Gaming Teamspeak - 
