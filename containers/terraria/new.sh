@@ -9,7 +9,7 @@ sudo docker run -it \
 	--name="newworld" \
 	ryshe/terraria:latest
 
-
+sudo ./cleanup.sh
 
 
 
