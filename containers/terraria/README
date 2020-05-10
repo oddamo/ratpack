@@ -12,7 +12,11 @@ NB, alle parameter som er true eller false må være satt i hermetegn grunnet pr
 
 --------------------------------------------------------------------------------------------------------------------------------
 
-Når en oppdretter en Terraria server for første gang så vil serveren XXXXXX
+Før en ny container med Terraria kan bli laget så må det på forhånd bli laget en ny verden. Dette blir gjort med hjelp av bash scriptet new.sh som befinner seg i denne mappen. For å starte scriptet skriv sudo ./new.sh i kommando linjen i samme mappe som scriptet befinner seg.
+
+Scriptet vil start en container og programvaren i containeren vil spørre om detaljer til den nye verden som blir generert. Når de ønskede detaljene er gitt og verden er generert så vil scriptet automatisk stoppe og slette denne containeren. Det som er igjen etterpå er en allerede generert verden som vil befinne seg i docker-volumes.
+
+
 sudo docker run -it -p XXXX:7777 -v /home/docker/docker-volumes/XXXX:/world --name="XXXX" ryshe/terraria:latest
 
 ---------------------------------------------------------------------------------------------------------------------------------
