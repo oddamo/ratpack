@@ -10,4 +10,4 @@ services:
     container_name: ratpack-terraria
     restart: always
 
-#sudo docker run -it -p 7777:7777 -v /home/docker/docker-volumes/ratpack-terraria:/world --name="ratpack-terraria" ryshe/terraria:latest
+

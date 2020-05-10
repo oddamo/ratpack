@@ -5,7 +5,7 @@ services:
       - 3979:3979/tcp
       - 3979:3979/udp
     volumes: 
-      - /home/docker/docker-volumes/ratpack-openttd/.openttd/openttd.cfg:/config/openttd.cfg:ro
+      - home/docker/ratpack/containers/openttd/ratpack-openttd/openttd.cfg:/config/openttd.cfg:ro
     image: redditopenttd/openttd
     container_name: ratpack-openttd
     restart: always

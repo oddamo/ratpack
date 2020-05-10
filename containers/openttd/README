@@ -26,10 +26,10 @@ TCP og UDP kan fint være den samme porten
       - XXXX:3979/tcp
       - XXXX:3979/udp
 
-Når containeren blir startet så vil konfigurasjonsfilen til serveren som servernavn, hvor mange spillere og lignende bli hentet fra denne lokasjonen på utsiden av containeren. Det er derfor viktig at det blir laget en openttd.cfg fil i samme lokasjon som det blir konfigurert her. Et eksempel kan kopieres og redigere fra openttd.cfg /ratpack/containers/openttd/openttd.cfg. Husk å la orginalen bli værende.
+Når containeren blir startet så vil konfigurasjonsfilen til serveren som servernavn, hvor mange spillere og lignende bli hentet fra denne lokasjonen på fra av containeren. Det er derfor viktig at det blir laget en openttd.cfg fil i samme lokasjon som det blir konfigurert her. Et eksempel kan kopieres og redigere fra openttd.cfg /ratpack/containers/openttd/openttd.cfg. Husk å la orginalen bli værende. Det anbefales å ha denne konfigurasjonsfilen i samme mappe som docker-compose.yaml.
 
     volumes: 
-      - /home/docker/docker-volumes/XXXX/.openttd/openttd.cfg:/config/openttd.cfg:ro
+      - /home/docker/ratpack/containers/openttd/XXXX/openttd.cfg:/config/openttd.cfg:ro
 
     image: redditopenttd/openttd
 

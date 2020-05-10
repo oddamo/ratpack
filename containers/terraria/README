@@ -14,10 +14,7 @@ NB, alle parameter som er true eller false må være satt i hermetegn grunnet pr
 
 Før en ny container med Terraria kan bli laget så må det på forhånd bli laget en ny verden. Dette blir gjort med hjelp av bash scriptet new.sh som befinner seg i denne mappen. For å starte scriptet skriv sudo ./new.sh i kommando linjen i samme mappe som scriptet befinner seg.
 
-Scriptet vil start en container og programvaren i containeren vil spørre om detaljer til den nye verden som blir generert. Når de ønskede detaljene er gitt og verden er generert så vil scriptet automatisk stoppe og slette denne containeren. Det som er igjen etterpå er en allerede generert verden som vil befinne seg i docker-volumes.
-
-
-sudo docker run -it -p XXXX:7777 -v /home/docker/docker-volumes/XXXX:/world --name="XXXX" ryshe/terraria:latest
+Scriptet vil starte en docker container og programvaren i containeren vil spørre om detaljer til den nye verden som blir generert. Når de ønskede detaljene er gitt og verden er generert så må bruker trykke ctrl + c for å stoppe containere, så vil scriptet automatisk fjerne denne containeren og la den genererte verden bli værende i docker-volumes mappen. 
 
 ---------------------------------------------------------------------------------------------------------------------------------
 
@@ -33,13 +30,19 @@ Hvilken port er ønsket at serveren skal bruke? Dette må være unikt for denne 
     ports:
       - XXXX:7777
 
+For at det skal være mulig å ha en verden som blir værende mellom restart av container eller serveren i seg selv, så må det først bli generert en ny verden som blir plassert i /home/docker/docker-volumes. Dette kan bli gjort med hjelp av new.sh scriptet som beskrevet over.
+Mappenavnet som ble valgt under genereringen av den nye verdenen må bli vist til i volumes.
 
     volumes:
       - /home/docker/docker-volumes/XXXX:/world
 
+Serveren må vite hva verdenen som skal bli startet sammen med containeren heter, dette ble valgt under genereringen av den nye verdenen og ligger i docker-volumes/XXXX mappen.
+
     command: '-world /world/XXXX.wld'
 
     image: ryshe/terraria:latest
+    
+ For å lettere kunne administrere docker containers når flere servere er oppe så er det lurt å sette et unikt navn på containeren for lettere administrasjon.
     
     container_name: XXXX
     restart: always
