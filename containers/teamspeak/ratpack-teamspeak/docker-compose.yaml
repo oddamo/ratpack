@@ -12,3 +12,7 @@ services:
     image: teamspeak
     container_name: ratpack-teamspeak
     restart: always
+
+
+
+    
