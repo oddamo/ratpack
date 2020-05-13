@@ -1,19 +1,17 @@
 Dette dokumentet er levert av Odd Andre M. Oddsen til Ratpack-Gaming sin hoved administrator.
 
-For å sette opp en ny minecraft server så må en rekke parameter bli redigert. Du kan kopiere template.yaml over i en ny mappe og gjøre om navnet til docker-compose.yaml og redigere innholdet fra der.
-For å starte en server, restarte den eller stoppe den helt så må en terminal jobbe ut fra samme mappe som docker-compose filen befinner seg. Følgende kommandoer kan da brukes.
+For å sette opp en ny Minecraft server så må en rekke parameter bli redigert. Du kan kopiere template.yaml over i en ny mappe og gjøre om navnet til docker-compose.yaml og redigere innholdet fra der.
+Under finner du en beskrivelse av parameterne i yaml filen som må redigeres før bruk.
+Husk at du ikke må bruke den originale template.yaml filen, men lag en kopi av den rediger deretter.
 
-docker 
-
-Under finner du en beskrivelse av parameterene i yaml filen som må redigeres før bruk.
-Husk at du ikke må bruke den orginale template.yaml filen, men lag en kopi av den rediger deretter.
+For å starte en server/container,  gjøre omstart eller stoppe den helt så må det skrives kommandoer i kommandolinjen. Se README i /ratpack for å se full kommando liste
 
 NB, alle parameter som er true eller false må være satt i hermetegn grunnet programmeringsspråket yaml bruker.
 ¤¤¤¤ ALT SOM ER MERKET MED XXXX ER PARAMETER SOM MÅ ENDRES! ¤¤¤¤
 
 ------------------------------------------------------------------------------------------------------------------------------------
 
-I docker compose så blir minecraft serveren satt opp som en service. Sett et unikt navn, gjerne det samme som verdenen som skal bli laget eller ligndende.
+I Docker Compose så blir Minecraft serveren satt opp som en service. Sett et unikt navn, gjerne det samme som verdenen som skal bli laget eller lignende.
 
   mc-XXXX:
     
@@ -25,7 +23,7 @@ Hvilken port er ønsket at serveren skal bruke? Dette må være unikt for denne 
 
     volumes:
 
-For at minecraft verden skal kunne bli lagret og fortsatt være der om containeren blir restartet så er det nødt til å bli satt en plass lokalt på serveren hvor slik data skal bli lagret. 
+For at Minecraft verden skal kunne bli lagret og fortsatt være der om containeren blir restartet så er det nødt til å bli satt en plass lokalt på serveren hvor slik data skal bli lagret. 
 Når containeren restarter så vil den hente lagrede data fra denne mappen som server konfigurasjoner, og verdener. Det er i denne mappen det eventuelt vil være mulig og gjøre endringer på en allerede laget verden i server.configuration filen.
 
       - XXXX:/data
@@ -53,17 +51,17 @@ Muligheter: true
       
       EULA: "XXXX"
 
-Hva er ønsket max minnebruk for denne minecraft serveren?
-Det er ønskelig med over 8GB om det skal være over 10 spillere på serveren.
+Hva er maks minnebruk for denne serveren?
+Det er ønskelig med over 8GB om det skal være over 50 spillere på serveren.
       
       MAX_MEMORY: XXXXG
 
-Hva er max høyde spillere skal kunne bygge i?
+Hva er maks høyde spillere skal kunne bygge i?
 256 er standard
       
       MAX_BUILD_HEIGHT: XXXX
 
-Hva er max lengde spillere skal kunne se på serveren?
+Hva er maks lengde spillere skal kunne se på serveren?
 NB, jo høyere denne verdien er jo mer ressurser må serveren bruke av CPU for å rendere verden.
 10 er standard
       
@@ -79,20 +77,20 @@ Muligheter: true - false
       
       FORCE_GAMEMODE: "XXXX"
 
-Hvor mange spillere skal max kunne spille på serveren samtidig?
+Hvor mange spillere skal maks kunne spille på serveren samtidig?
 Jo høyere antall jo mer ressurser kan måtte brukes på serveren.
 Om serveren begynner å bli ustabil eller responstiden blir veldig lav om mange er inne samtidig kan dette justeres her. 20 stk er et greit utgangspunkt
       
       MAX_PLAYERS: XXXX
 
-RCON er en protokoll som gjør at det kan sendes kommandoer direkte til minecraft serveren med tredjeparts programvare
+RCON er en protokoll som gjør at det kan sendes kommandoer direkte til Minecraft serveren med tredjeparts programvare
 for lettere administrasjon. Om denne funksjonen er ønskelig aktiveres denne her.
 Muligheter: true - false
       
       ENABLE_RCON: "XXXX"
 
 RCON bruker et passord for at et administratorpanel skal kunne kobles til.
-NB, denne blir kun lagret i klar tekst i filene til minecraft serveren og burde derfor være unik og ikke det samme som selve verten av containeren.
+NB, denne blir kun lagret i klar tekst i filene til Minecraft serveren og burde derfor være unik og ikke det samme som selve verten av containeren.
       
       RCON_PASSWORD: XXXX
 
@@ -100,11 +98,11 @@ Hvilken port er det ønskelig at tredjeparts programvare skal kunne kontakte RCO
       
       RCON_PORT: XXXX
 
-Det er mulig og sette en unik beskjed på serveren som alle spillere kan se før de logger seg inn på serveren.
+Det er mulig å sette en unik beskjed på serveren som alle spillere kan se før de logger seg inn på serveren.
       
       MOTD: XXXX
 
-Hvilket navn skal denne verden ha? Det er viktig med noe unikt da dette blir lagret i filsystemet og gjør det lettere med backup
+Hvilket navn skal denne verden ha? Det er viktig med noe unikt da dette blir lagret i filsystemet og gjør det lettere med Backup
       
       LEVEL: XXXX
 
@@ -135,7 +133,7 @@ Muligheter: true - false
   
     image: itzg/minecraft-server
 
-For å lettere kunne administrere docker containers når flere servere er oppe så er det lurt å sette et unikt navn på containeren for lettere administrasjon.
+For å lettere kunne administrere Docker containers når flere servere er oppe så er det lurt å sette et unikt navn på containeren for lettere administrasjon.
 
     container_name: ratpack-XXXX
 

@@ -1,11 +1,9 @@
 Dette dokumentet er levert av Odd Andre M. Oddsen til Ratpack-Gaming sin hoved administrator.
 
-For å sette opp en ny openTTD server så må en rekke parameter bli redigert. Du kan kopiere template.yaml som befinner seg i denne mappen over i en ny mappe og gjøre om navnet til docker-compose.yaml og redigere innholdet fra der.
-
-For å starte en server/container, restarte den eller stoppe den helt så må det skrives kommandoer i kommandolinjen. Se README i /ratpack for å se full kommandloliste. 
-
-Under finner du en beskrivelse av parameterene i yaml filen som må redigeres før bruk.
-Husk at du ikke må bruke den orginale template.yaml filen, men lag en kopi av den orginale for bruk. 
+For å sette opp en ny Teamspeak server så må en rekke parameter bli redigert. Du kan kopiere template.yaml som befinner seg i denne mappen over i en ny mappe og gjøre om navnet til docker-compose.yaml og redigere innholdet fra der.
+For å starte en server/container, gjøre omstart eller stoppe den helt så må det skrives kommandoer i kommandolinjen. Se README i /ratpack for å se full kommando liste.
+Under finner du en beskrivelse av parameterne i yaml filen som må redigeres før bruk.
+Husk at du ikke må bruke den originale template.yaml filen, men lag en kopi av den originale for bruk. 
 
 NB, alle parameter som er true eller false må være satt i hermetegn grunnet programmeringsspråket yaml bruker.
 ¤¤¤¤ ALT SOM ER MERKET MED XXXX ER PARAMETER SOM MÅ ENDRES! ¤¤¤¤
@@ -16,7 +14,7 @@ NB, alle parameter som er true eller false må være satt i hermetegn grunnet pr
 version: '3'
 services:
 
-I docker compose så blir openTTD serveren satt opp som en service. Sett et unikt navn som viser til innholdet i tjenesten.
+I docker compose så Teamspeak blir serveren satt opp som en service. Sett et unikt navn som viser til innholdet i tjenesten.
 
   XXXX:
 
@@ -28,12 +26,19 @@ Hvilken port er ønsket at serveren skal bruke? Dette må være unikt for denne 
       - XXXX:10011
       - XXXX:30033
 
-For at oppdrettede kanaler på teamspeak serveren skal bli værende etter omstart av container eller server så må det bli satt opp et volume for lagring av konfigurasjon.
+For at oppdrettede kanaler på Teamspeak serveren skal bli værende etter omstart av container eller server så må det bli satt opp et volume for lagring av konfigurasjon.
 
     volumes:
       - XXXX:/var/ts3server/
+
+For at containeren skal kunne bli startet så må lisensavtalen bli godkjent, dette blir gjort under environment. For å lese lisensavtalen se ratpack/containers/teamspeak/license.txt
+
     environment:
       TS3SERVER_LICENSE: accept
+
     image: teampeak
+
+For å lettere kunne administrere docker containers når flere servere er oppe så er det lurt å sette et unikt navn på containeren for lettere administrasjon.
+
     container_name: XXXX
     restart: always

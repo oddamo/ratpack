@@ -2,10 +2,10 @@ Dette dokumentet er levert av Odd Andre M. Oddsen til Ratpack-Gaming sin hoved a
 
 For å sette opp en ny openTTD server så må en rekke parameter bli redigert. Du kan kopiere template.yaml som befinner seg i denne mappen over i en ny mappe og gjøre om navnet til docker-compose.yaml og redigere innholdet fra der.
 
-For å starte en server/container, restarte den eller stoppe den helt så må det skrives kommandoer i kommandolinjen. Se README i /ratpack for å se full kommandloliste. 
+For å starte en server/container, gjøre omstart eller stoppe den helt så må det skrives kommandoer i kommandolinjen. Se README i /ratpack for å se full kommando liste.
 
-Under finner du en beskrivelse av parameterene i yaml filen som må redigeres før bruk.
-Husk at du ikke må bruke den orginale template.yaml filen, men lag en kopi av den orginale for bruk. 
+Under finner du en beskrivelse av parameterne i yaml filen som må redigeres før bruk.
+Husk at du ikke må bruke den originale template.yaml filen, men lag en kopi av den originale for bruk. 
 
 NB, alle parameter som er true eller false må være satt i hermetegn grunnet programmeringsspråket yaml bruker.
 ¤¤¤¤ ALT SOM ER MERKET MED XXXX ER PARAMETER SOM MÅ ENDRES! ¤¤¤¤
