@@ -1,1 +1,59 @@
-TEST 123
+Dette dokumentet er levert av Odd Andre M. Oddsen til Ratpack-Gaming sin hoved administrator.
+
+Denne løsningen forutsetter at Docker og Docker-Compose er installert.
+
+For og starte en ny container med spill eller teamspeak server så må det bli laget en ny mappe til hver container. Inne i denne nye mappen må det være være en fil som heter docker-compose.yaml som inneholder alle konfigurasjoner containeren skal inneholde. Mappenavnet må reflektere inneholdet i denne mappen da mappenavnet blir tatt med videre i administreringen av den nye containeren. 
+Eksempel: /home/docker/containers/minecraft/minecraftserver1/docker.compose.yaml
+
+Det er en mal for hver spilltype i de forskjellige mappene kaldt template.yaml, bruk disse malene til å lage nye mapper og containere og les README som ligger i hver spillmappe for hvordan de forskjellige spillserverne og tjenestene må bli konfigurert da dette varierer noe. 
+
+
+/ratpack|containers|spilltype|containeranvn|docker-compose.yaml
+		|README*   |README
+		|PORT      |template.yaml
+
+--------------------------------------------------------------------------------------------------------------------------------
+For å starte en ny container så må følgende kommando bli skrevet i kommandolinjen fra innsiden av mappen med docker-compose.yaml
+
+¤ docker-compose up
+
+Når den nye containeren er testet og ser ut til å fungere trykk ctrl + c for å stoppe containeren.
+Start containeren igjen i bakgrunnen med å skrive følgende kommando:
+
+¤ docker-compose up -d
+
+Den nye containeren vil nå bli kjørt i bakgrunnen.
+----------------------------------------------------------------------------------------------------------------------------------
+For å stopp en container som kjører i bakgrunnen 
+
+
+¤ docker stop containernavn
+
+
+For å fjerne en container helt fra serveren
+
+
+¤ docker rm containernavn
+
+
+for å fjerne det lagrede innholdet til containeren
+
+
+¤ sudo rm -rf /home/docker/docker-volumes/containernavn
+----------------------------------------------------------------------------------------------------------------------------------
+For å få oversikt over hvilke containere som er oppe
+
+¤ docker ps
+
+Får å få en live oversikt over ressursbruk på containere
+
+¤ docker stats 
+
+for å få en bedre oversikt så anbefales det å bruke programvaren glances
+glances kan lastes ned med følgende kommando
+
+¤ sudo apt-get install glances
+
+For å bruke glances
+
+¤ glances
