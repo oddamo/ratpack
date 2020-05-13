@@ -1,6 +1,10 @@
 Dette dokumentet er levert av Odd Andre M. Oddsen til Ratpack-Gaming sin hoved administrator.
 
-Denne løsningen forutsetter at Docker og Docker-Compose er installert.
+Denne løsningen forutsetter at Docker, Docker-Compose og git er installert.
+
+For å laste innholdet fra github til Server
+
+¤ git pull https://github.com/oddamo/ratpack.git
 
 For og starte en ny container med spill eller teamspeak server så må det bli laget en ny mappe til hver container. Inne i denne nye mappen må det være være en fil som heter docker-compose.yaml som inneholder alle konfigurasjoner containeren skal inneholde. Mappenavnet må reflektere inneholdet i denne mappen da mappenavnet blir tatt med videre i administreringen av den nye containeren. 
 Eksempel: /home/docker/containers/minecraft/minecraftserver1/docker.compose.yaml
